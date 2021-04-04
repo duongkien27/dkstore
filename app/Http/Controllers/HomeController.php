@@ -32,16 +32,16 @@ class HomeController extends Controller
 
     public function index(Request $request){
         //seo 
-        $meta_desc = "Chuyên bán những phụ kiện gym và thực phẩm dinh dưỡng, Là 1 gymer ngoài việc có body đẹp cần là 1 người có ích trong xã hội: trí tuệ, sức khỏe"; 
-        $meta_keywords = "thuc pham chuc nang, thực phẩm chức năng, phụ kiện gym";
-        $meta_title = "Thực phẩm bổ sung thể hình, phụ kiện tập GYM VIP";
+        $meta_desc = "Chuyên cung cấp các loại tài khoản cao cấp phục vụ mọi nhu cầu"; 
+        $meta_keywords = "Tài khoản Netlfix, Spotify,...";
+        $meta_title = "DK-Store | Cung cấp tài khoản Premium";
         $url_canonical = $request->url();
         //--seo
         
-    	$cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get(); 
-        $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id','desc')->get(); 
+    	$cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get(); 
+        $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get(); 
 
-         $all_product = DB::table('tbl_product')->where('product_status','0')->orderby('product_id','desc')->limit(15)->get(); 
+        $all_product = DB::table('tbl_product')->where('product_status','1')->orderby('product_id','desc')->limit(15)->get(); 
 
     	return view('pages.home')->with('category',$cate_product)->with('brand',$brand_product)->with('all_product',$all_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
     }
@@ -54,8 +54,8 @@ class HomeController extends Controller
         //--seo
         $keywords = $request->keywords_submit;
 
-        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get(); 
-        $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id','desc')->get(); 
+        $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get(); 
+        $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get(); 
 
         $search_product = DB::table('tbl_product')->where('product_name','like','%'.$keywords.'%')->get(); 
 

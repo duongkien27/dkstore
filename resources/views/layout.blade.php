@@ -9,14 +9,8 @@
     <meta name="robots" content="INDEX,FOLLOW"/>
     <link  rel="canonical" href="{{$url_canonical}}" />
     <meta name="author" content="">
-    <link  rel="icon" type="image/x-icon" href="" />
+    <link  rel="icon" type="image/x-icon" href="{{('public/frontend/images/logo.ico')}}" />
     
-    {{--   <meta property="og:image" content="{{$image_og}}" />  
-      <meta property="og:site_name" content="http://localhost/tutorial_youtube/shopbanhanglaravel" />
-      <meta property="og:description" content="{{$meta_desc}}" />
-      <meta property="og:title" content="{{$meta_title}}" />
-      <meta property="og:url" content="{{$url_canonical}}" />
-      <meta property="og:type" content="website" /> --}}
     <!--//-------Seo--------->
     <title>{{$meta_title}}</title>
     <link href="{{asset('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -33,7 +27,7 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="{{('public/frontend/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{('public/frontend/images/logo.ico')}}">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -49,8 +43,8 @@
                     <div class="col-sm-6">
                         <div class="contactinfo">
                             <ul class="nav nav-pills">
-                                <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i>0338838165</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> duongkien.hust@gmail.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -74,28 +68,26 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="{{('public/frontend/images/home/logo.png')}}" alt="" /></a>
+                            <a href="{{URL::to('/trang-chu')}}"><img style="height:100px; width: 100px" src="{{('public/frontend/images/logo.png')}}" alt="" /></a>
                         </div>
                         <div class="btn-group pull-right">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                    USA
+                                    Việt Nam
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Canada</a></li>
-                                    <li><a href="#">UK</a></li>
+                                    <li><a href="#">USA</a></li>
                                 </ul>
                             </div>
                             
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                    DOLLAR
+                                    VNĐ
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Canadian Dollar</a></li>
-                                    <li><a href="#">Pound</a></li>
+                                    <li><a href="#">Dollar</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -163,10 +155,6 @@
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="{{URL::to('/trang-chu')}}" class="active">Trang chủ</a></li>
                                 <li class="dropdown"><a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-                                       
-                                    </ul>
                                 </li> 
                                 <li class="dropdown"><a href="#">Tin tức<i class="fa fa-angle-down"></i></a>
                                
@@ -204,39 +192,36 @@
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
-                                    <h2>Free E-Commerce Template</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
+                                    <h1><span>DK</span>-Store</h1>
+                                    <h2>Cung cấp tài khoản Premium</h2>
+                                    <p>Giá cả phải chăng - Uy tín là vàng</p>
+                                    <button type="button" class="btn btn-default get">Xem chi tiết</button>
                                 </div>
                                 <div class="col-sm-6">
                                     <img src="{{('public/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
-                                    <h2>100% Responsive Design</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
+                                    <h1><span>DK</span>-Store</h1>
+                                    <h2>Cung cấp tài khoản Premium</h2>
+                                    <p>Giá cả phải chăng - Uy tín là vàng</p>
+                                    <button type="button" class="btn btn-default get">Xem chi tiết</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/girl2.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
+                                    <img src="{{('public/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
                                 </div>
                             </div>
                             
                             <div class="item">
                                 <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
-                                    <h2>Free Ecommerce Template</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
+                                    <h1><span>DK</span>-Store</h1>
+                                    <h2>Cung cấp tài khoản Premium</h2>
+                                    <p>Giá cả phải chăng - Uy tín là vàng</p>
+                                    <button type="button" class="btn btn-default get">Xem chi tiết</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/girl3.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{('public/frontend/images/pricing.png')}}" class="pricing" alt="" />
+                                    <img src="{{('public/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
                                 </div>
                             </div>
                             
@@ -254,57 +239,15 @@
             </div>
         </div>
     </section><!--/slider-->
-    
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="left-sidebar">
-                        <h2>Danh mục sản phẩm</h2>
-                        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-                          @foreach($category as $key => $cate)
-                           
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="{{URL::to('/danh-muc-san-pham/'.$cate->slug_category_product)}}">{{$cate->category_name}}</a></h4>
-                                </div>
-                            </div>
-                        @endforeach
-                        </div><!--/category-products-->
-                    
-                        <div class="brands_products"><!--brands_products-->
-                            <h2>Thương hiệu sản phẩm</h2>
-                            <div class="brands-name">
-                                <ul class="nav nav-pills nav-stacked">
-                                    @foreach($brand as $key => $brand)
-                                    <li><a href="{{URL::to('/thuong-hieu-san-pham/'.$brand->brand_slug)}}"> <span class="pull-right">(50)</span>{{$brand->brand_name}}</a></li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div><!--/brands_products-->
-                        
-                     
-                    
-                    </div>
-                </div>
-                
-                <div class="col-sm-9 padding-right">
-
-                   @yield('content')
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-    
+    @yield('content')
     <footer id="footer"><!--Footer-->
         <div class="footer-top">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="companyinfo">
-                            <h2><span>e</span>-shopper</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+                            <h2><span>DK</span>-Store</h2>
+                            <p>Cung cấp tài khoản Premium</p>
                         </div>
                     </div>
                     <div class="col-sm-7">

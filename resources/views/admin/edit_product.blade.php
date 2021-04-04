@@ -23,11 +23,7 @@
                                     <label for="exampleInputEmail1">Tên sản phẩm</label>
                                     <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" value="{{$pro->product_name}}">
                                 </div>
-                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Slug</label>
-                                    <input type="text" name="product_slug" class="form-control" id="exampleInputEmail1" value="{{$pro->product_slug}}">
-                                </div>
-                                     <div class="form-group">
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">Giá sản phẩm</label>
                                     <input type="text" value="{{$pro->product_price}}" name="product_price" class="form-control" id="exampleInputEmail1" >
                                 </div>
@@ -71,7 +67,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Hiển thị</label>
+                                    <label for="exampleInputPassword1">Trạng thái</label>
                                       <select name="product_status" class="form-control input-sm m-bot15">
                                             <option value="0">Ẩn</option>
                                             <option value="1">Hiển thị</option>

@@ -19,19 +19,19 @@
                                 <form role="form" action="{{URL::to('/update-brand-product/'.$edit_value->brand_id)}}" method="post">
                                     {{ csrf_field() }}
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Tên danh mục</label>
+                                    <label for="exampleInputEmail1">Tên thương hiệu</label>
                                     <input type="text" value="{{$edit_value->brand_name}}" name="brand_product_name" class="form-control" id="exampleInputEmail1" >
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Slug</label>
-                                    <input type="text" value="{{$edit_value->brand_slug}}" name="brand_product_slug" class="form-control" id="exampleInputEmail1" >
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Mô tả danh mục</label>
+                                    <label for="exampleInputPassword1">Mô tả thương hiệu</label>
                                     <textarea style="resize: none" rows="8" class="form-control" name="brand_product_desc" id="exampleInputPassword1" >{{$edit_value->brand_desc}}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Hiển thị</label>
+                                    <label for="exampleInputPassword1">Từ khóa</label>
+                                    <textarea style="resize: none" rows="8" class="form-control" name="brand_keyword" id="exampleInputPassword1" placeholder="Mô tả danh mục">{{$edit_value->brand_keyword}}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Trạng thái</label>
                                       <select name="brand_product_status" class="form-control input-sm m-bot15">
                                             <option value="0">Ẩn</option>
                                             <option value="1">Hiển thị</option>

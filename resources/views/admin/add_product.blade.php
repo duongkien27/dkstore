@@ -23,10 +23,6 @@
                                     <input type="text" data-validation="length" data-validation-length="min10" data-validation-error-msg="Làm ơn điền ít nhất 10 ký tự" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Tên danh mục">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Slug</label>
-                                    <input type="text" name="product_slug" class="form-control" id="exampleInputEmail1" placeholder="Tên danh mục">
-                                </div>
-                                     <div class="form-group">
                                     <label for="exampleInputEmail1">Giá sản phẩm</label>
                                     <input type="text" data-validation="number" data-validation-error-msg="Làm ơn điền số tiền" name="product_price" class="form-control" id="" placeholder="Tên danh mục">
                                 </div>
@@ -61,7 +57,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Hiển thị</label>
+                                    <label for="exampleInputPassword1">Trạng thái</label>
                                       <select name="product_status" class="form-control input-sm m-bot15">
                                             <option value="0">Ẩn</option>
                                             <option value="1">Hiển thị</option>
