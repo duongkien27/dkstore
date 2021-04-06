@@ -7,6 +7,7 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
+<link  rel="icon" type="image/x-icon" href="{{('public/frontend/images/logo.ico')}}" />
 <link rel="stylesheet" href="{{asset('public/backend/css/bootstrap.min.css')}}" >
 
 <!-- //bootstrap-css -->
@@ -54,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="{{('public/backend/images/2.png')}}">
+                <img alt="" src="{{('public/backend/images/admin.jpg')}}">
                 <span class="username">
                 	<?php
 					$name = Session::get('admin_name');

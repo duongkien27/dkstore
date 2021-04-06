@@ -198,7 +198,7 @@
                                     <button type="button" class="btn btn-default get">Xem chi tiết</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{('public/frontend/images/netflix.png')}}" class="girl img-responsive" alt="" />
                                 </div>
                             </div>
                             <div class="item">
@@ -253,61 +253,57 @@
                     <div class="col-sm-7">
                         <div class="col-sm-3">
                             <div class="video-gallery text-center">
-                                <a href="#">
+                                <a href="https://www.netflix.com/browse">
                                     <div class="iframe-img">
-                                        <img src="{{('public/frontend/images/iframe1.png')}}" alt="" />
+                                        <img src="{{('public/frontend/images/netflix.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
                                     </div>
                                 </a>
-                                <p>Circle of Hands</p>
-                                <h2>24 DEC 2014</h2>
+                                <p>Trang chủ Netflix</p>
                             </div>
                         </div>
                         
                         <div class="col-sm-3">
                             <div class="video-gallery text-center">
-                                <a href="#">
+                                <a href="https://www.spotify.com/">
                                     <div class="iframe-img">
-                                         <img src="{{('public/frontend/images/iframe2.png')}}" alt="" />
+                                         <img src="{{('public/frontend/images/spotify.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
                                     </div>
                                 </a>
-                                <p>Circle of Hands</p>
-                                <h2>24 DEC 2014</h2>
+                                <p>Trang chủ Spotify</p>
                             </div>
                         </div>
                         
                         <div class="col-sm-3">
                             <div class="video-gallery text-center">
-                                <a href="#">
+                                <a href="https://galaxyplay.vn/">
                                     <div class="iframe-img">
-                                         <img src="{{('public/frontend/images/iframe3.png')}}" alt="" />
+                                         <img src="{{('public/frontend/images/galaxy.jpg')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
                                     </div>
                                 </a>
-                                <p>Circle of Hands</p>
-                                <h2>24 DEC 2014</h2>
+                                <p>Trang chủ Galaxy Play</p>
                             </div>
                         </div>
                         
                         <div class="col-sm-3">
                             <div class="video-gallery text-center">
-                                <a href="#">
+                                <a href="https://www.canva.com/">
                                     <div class="iframe-img">
-                                         <img src="{{('public/frontend/images/iframe4.png')}}" alt="" />
+                                         <img src="{{('public/frontend/images/canva.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
                                     </div>
                                 </a>
-                                <p>Circle of Hands</p>
-                                <h2>24 DEC 2014</h2>
+                                <p>Trang chủ Canva</p>
                             </div>
                         </div>
                     </div>
