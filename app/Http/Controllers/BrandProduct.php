@@ -110,8 +110,17 @@ class BrandProduct extends Controller
 
         $brand_by_id = DB::table('tbl_product')->join('tbl_brand','tbl_product.brand_id','=','tbl_brand.brand_id')->where('tbl_brand.brand_id',$brand_id)->get();
 
+        foreach($brand_by_id as $key => $val){
+              //seo 
+                $meta_desc = $val->brand_desc; 
+                $meta_keywords = $val->brand_name;
+                $meta_title = $val->brand_name;
+                $url_canonical = '';
+                //--seo
+        }
+
         $brand_name = DB::table('tbl_brand')->where('tbl_brand.brand_id',$brand_id)->limit(1)->get();
 
-        return view('pages.brand.show_brand')->with('category',$cate_product)->with('brand',$brand_product)->with('brand_by_id',$brand_by_id)->with('brand_name',$brand_name);
+        return view('pages.brand.show_brand')->with('category',$cate_product)->with('brand',$brand_product)->with('brand_by_id',$brand_by_id)->with('brand_name',$brand_name)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);;
     }
 }

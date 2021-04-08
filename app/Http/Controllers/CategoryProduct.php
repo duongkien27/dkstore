@@ -95,7 +95,7 @@ class CategoryProduct extends Controller
                 $meta_desc = $val->category_desc; 
                 $meta_keywords = $val->category_keyword;
                 $meta_title = $val->category_name;
-                $url_canonical = $request->url();
+                $url_canonical = '';
                 //--seo
         }
         

@@ -135,19 +135,20 @@ class ProductController extends Controller
 
         foreach($details_product as $key => $value){
             $category_id = $value->category_id;
+            $category_name = $value->category_name;
+            Session::put('cate_more',$category_id);
                 //seo 
                 $meta_desc = $value->product_desc;
-                $meta_keywords = $value->product_slug;
+                $meta_keywords = $value->product_name;
                 $meta_title = $value->product_name;
-                $url_canonical = $request->url();
+                $url_canonical = '';
                 //--seo
             }
-       
 
         $related_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
-        ->where('tbl_category_product.category_id',$category_id)->whereNotIn('tbl_product.product_id',[$product_id])->get();
+        ->where('tbl_category_product.category_id',$category_id)->whereNotIn('tbl_product.product_id',[$product_id])->limit(6)->get();
 
 
         return view('pages.sanpham.show_details')->with('category',$cate_product)->with('brand',$brand_product)->with('product_details',$details_product)->with('relate',$related_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);

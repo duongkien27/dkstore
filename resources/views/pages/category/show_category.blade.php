@@ -1,15 +1,48 @@
 @extends('layout')
 @section('content')
-<div class="features_items"><!--features_items-->
-                       <div class="fb-share-button" data-href="http://localhost/tutorial_youtube/shopbanhanglaravel" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{$url_canonical}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
-                       <div class="fb-like" data-href="{{$url_canonical}}" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Danh mục sản phẩm</h2>
+                    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                      @foreach($category as $key => $cate)
+                       
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{{URL::to('/danh-muc-san-pham/'.$cate->category_id)}}">{{$cate->category_name}}</a></h4>
+                            </div>
+                        </div>
+                    @endforeach
+                    </div><!--/category-products-->
+                
+                    <div class="brands_products"><!--brands_products-->
+                        <h2>Thương hiệu sản phẩm</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                @foreach($brand as $key => $brand)
+                                <li><a href="{{URL::to('/thuong-hieu-san-pham/'.$brand->brand_id)}}"> <span class="pull-right">(50)</span>{{$brand->brand_name}}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div><!--/brands_products-->
+                    
+                 
+                
+                </div>
+            </div>
+            
+            <div class="col-sm-9 padding-right">
+               <div class="features_items"><!--features_items-->
                         @foreach($category_name as $key => $name)
                        
                         <h2 class="title text-center">{{$name->category_name}}</h2>
 
                         @endforeach
                         @foreach($category_by_id as $key => $product)
-                        <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_slug)}}">
+                        <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}">
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
 
@@ -35,6 +68,10 @@
                         @endforeach
                     </div><!--features_items-->
                     <div class="fb-comments" data-href="{{$url_canonical}}" data-width="" data-numposts="20"></div>
-                    <div class="fb-page" data-href="https://www.facebook.com/webextrasite/" data-tabs="message" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/webextrasite/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/webextrasite/">Webextrasite - Công Ty Thiết Kế Website - Đào tạo tin học Online</a></blockquote></div>
         <!--/recommended_items-->
+                
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
