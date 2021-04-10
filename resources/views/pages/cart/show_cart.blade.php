@@ -29,20 +29,20 @@
 						@foreach($content as $v_content)
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="{{URL::to('public/uploads/product/'.$v_content->options->image)}}" width="90" alt="" /></a>
+								<a href=""><img src="{{URL::to('public/uploads/product/'.$v_content->options->image)}}" width="50" height="50" alt="" /></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href="">{{$v_content->name}}</a></h4>
 								<p>Web ID: 1089772</p>
 							</td>
 							<td class="cart_price">
-								<p>{{number_format($v_content->price).' '.'vnđ'}}</p>
+								<p>{{number_format($v_content->price).'đ'}}</p>
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
 									<form action="{{URL::to('/update-cart-quantity')}}" method="POST">
 									{{ csrf_field() }}
-									<input class="cart_quantity_input" type="text" name="cart_quantity" value="{{$v_content->qty}}"  >
+									<input class="cart_quantity_input" size="3" type="text" name="cart_quantity" value="{{$v_content->qty}}"  >
 									<input type="hidden" value="{{$v_content->rowId}}" name="rowId_cart" class="form-control">
 									<input type="submit" value="Cập nhật" name="update_qty" class="btn btn-default btn-sm">
 									</form>
@@ -53,7 +53,7 @@
 									
 									<?php
 									$subtotal = $v_content->price * $v_content->qty;
-									echo number_format($subtotal).' '.'vnđ';
+									echo number_format($subtotal).'đ';
 									?>
 								</p>
 							</td>
@@ -75,11 +75,12 @@
 			
 				<div class="col-sm-6">
 					<div class="total_area">
+						<h3 style="text-align: center;">Hóa đơn</h2>
 						<ul>
-							<li>Tổng <span>{{Cart::total().' '.'vnđ'}}</span></li>
-							<li>Thuế <span>{{Cart::tax().' '.'vnđ'}}</span></li>
+							<li>Tổng <span>{{Cart::total().'đ'}}</span></li>
+							<li>Thuế <span>0đ</span></li>
 							<li>Phí vận chuyển <span>Free</span></li>
-							<li>Thành tiền <span>{{Cart::total().' '.'vnđ'}}</span></li>
+							<li>Thành tiền <span style="color: red">{{Cart::total().'đ'}}</span></li>
 						</ul>
 						{{-- 	<a class="btn btn-default update" href="">Update</a> --}}
 							  <?php

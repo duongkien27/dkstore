@@ -53,7 +53,7 @@
 
                                     <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}">
                                         <img src="{{URL::to('public/uploads/product/'.$product->product_image)}}" alt="" />
-                                        <h2>{{number_format($product->product_price).' '.'VNĐ'}}</h2>
+                                        <h2>{{number_format($product->product_price).'đ'}}</h2>
                                         <p>{{$product->product_name}}</p>
 
                                      

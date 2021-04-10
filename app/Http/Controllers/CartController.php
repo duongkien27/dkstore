@@ -13,41 +13,6 @@ use App\Coupon;
 session_start();
 class CartController extends Controller
 {
-    public function check_coupon(Request $request){
-        $data = $request->all();
-        $coupon = Coupon::where('coupon_code',$data['coupon'])->first();
-        if($coupon){
-            $count_coupon = $coupon->count();
-            if($count_coupon>0){
-                $coupon_session = Session::get('coupon');
-                if($coupon_session==true){
-                    $is_avaiable = 0;
-                    if($is_avaiable==0){
-                        $cou[] = array(
-                            'coupon_code' => $coupon->coupon_code,
-                            'coupon_condition' => $coupon->coupon_condition,
-                            'coupon_number' => $coupon->coupon_number,
-
-                        );
-                        Session::put('coupon',$cou);
-                    }
-                }else{
-                    $cou[] = array(
-                            'coupon_code' => $coupon->coupon_code,
-                            'coupon_condition' => $coupon->coupon_condition,
-                            'coupon_number' => $coupon->coupon_number,
-
-                        );
-                    Session::put('coupon',$cou);
-                }
-                Session::save();
-                return redirect()->back()->with('message','Thêm mã giảm giá thành công');
-            }
-
-        }else{
-            return redirect()->back()->with('error','Mã giảm giá không đúng');
-        }
-    }   
     public function gio_hang(Request $request){
          //seo 
         $meta_desc = "Giỏ hàng của bạn"; 
@@ -148,9 +113,6 @@ class CartController extends Controller
     	$quantity = $request->qty;
     	$product_info = DB::table('tbl_product')->where('product_id',$productId)->first(); 
 
-    
-        // Cart::add('293ad', 'Product 1', 1, 9.99, 550);
-        // Cart::destroy();
         $data['id'] = $product_info->product_id;
         $data['qty'] = $quantity;
         $data['name'] = $product_info->product_name;

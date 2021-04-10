@@ -53,7 +53,7 @@
 												<form action="{{URL::to('/save-cart')}}" method="POST">
 													{{ csrf_field() }}
 												<span>
-													<span>{{number_format($value->product_price).' VNĐ'}}</span>
+													<span>{{number_format($value->product_price).'đ'}}</span>
 												
 													<label>Số lượng:</label>
 													<input name="qty" type="number" min="1"  value="1" />
@@ -102,8 +102,8 @@
 													
 													<form action="#">
 														<span>
-															<input type="text" placeholder="Your Name"/>
-															<input type="email" placeholder="Email Address"/>
+															<input type="text" placeholder="Tên của bạn"/>
+															<input type="email" placeholder="Địa chỉ Email"/>
 														</span>
 														<textarea name="" ></textarea>
 														<b>Đánh giá: </b> <img src="images/product-details/rating.png" alt="" />
@@ -130,7 +130,7 @@
 																<div class="productinfo text-center">
 																	<a href="{{URL::to('/chi-tiet-san-pham/'.$lienquan->product_id)}}">
 																	<img src="{{URL::to('public/uploads/product/'.$lienquan->product_image)}}" alt="" />
-																	<h2>{{number_format($lienquan->product_price).' '.'VNĐ'}}</h2>
+																	<h2>{{number_format($lienquan->product_price).'đ'}}</h2>
 																	<p>{{$lienquan->product_name}}</p>
 																	</a>
 																	<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
