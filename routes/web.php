@@ -114,7 +114,10 @@ Route::post('/confirm-order','CheckoutController@confirm_order');
 
 Route::get('/print-order/{checkout_code}','OrderController@print_order');
 Route::get('/manage-order','OrderController@manage_order');
-Route::get('/view-order/{order_code}','OrderController@view_order');
+Route::get('/view-order/{orderId}','OrderController@view_order');
+Route::get('/unactive-bill/{order_id}','OrderController@unactive_bill');
+Route::get('/active-bill/{order_id}','OrderController@active_bill');
+Route::get('/delete-bill/{order_id}','OrderController@delete_bill');
 
 
 

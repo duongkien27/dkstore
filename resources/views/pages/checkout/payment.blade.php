@@ -34,20 +34,19 @@
 						@foreach($content as $v_content)
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="{{URL::to('public/uploads/product/'.$v_content->options->image)}}" width="90" alt="" /></a>
+								<a href=""><img height="50" width="50" src="{{URL::to('public/uploads/product/'.$v_content->options->image)}}" alt="" /></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href="">{{$v_content->name}}</a></h4>
-								<p>Web ID: 1089772</p>
 							</td>
 							<td class="cart_price">
-								<p>{{number_format($v_content->price).' '.'vnđ'}}</p>
+								<p>{{number_format($v_content->price).'đ'}}</p>
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
 									<form action="{{URL::to('/update-cart-quantity')}}" method="POST">
 									{{ csrf_field() }}
-									<input class="cart_quantity_input" type="text" name="cart_quantity" value="{{$v_content->qty}}"  >
+									<input class="cart_quantity_input" type="text" name="cart_quantity" size="3" value="{{$v_content->qty}}"  >
 									<input type="hidden" value="{{$v_content->rowId}}" name="rowId_cart" class="form-control">
 									<input type="submit" value="Cập nhật" name="update_qty" class="btn btn-default btn-sm">
 									</form>
@@ -58,7 +57,7 @@
 									
 									<?php
 									$subtotal = $v_content->price * $v_content->qty;
-									echo number_format($subtotal).' '.'vnđ';
+									echo number_format($subtotal).'đ';
 									?>
 								</p>
 							</td>
@@ -75,14 +74,15 @@
 				{{ csrf_field() }}
 			<div class="payment-options">
 					<span>
-						<label><input name="payment_option" value="1" type="checkbox"> Trả bằng thẻ ATM</label>
+						<label><input name="payment_option" value="Internet Banking" type="checkbox"> Internet Banking</label>
 					</span>
 					<span>
-						<label><input name="payment_option" value="2" type="checkbox"> Nhận tiền mặt</label>
+						<label><input name="payment_option" value="Momo" type="checkbox"> Momo</label>
 					</span>
 					<span>
-						<label><input name="payment_option" value="3" type="checkbox"> Thanh toán thẻ ghi nợ</label>
+						<label><input name="payment_option" value="Airpay" type="checkbox"> Airpay</label>
 					</span>
+					<br>
 					<input type="submit" value="Đặt hàng" name="send_order_place" class="btn btn-primary btn-sm">
 			</div>
 			</form>

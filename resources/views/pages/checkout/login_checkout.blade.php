@@ -10,7 +10,7 @@
 						<form action="{{URL::to('/login-customer')}}" method="POST">
 							{{csrf_field()}}
 							<input type="text" name="email_account" placeholder="Tài khoản" />
-							<input type="password" name="password_account" placeholder="Password" />
+							<input type="password" name="password_account" placeholder="Mật khẩu" />
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Ghi nhớ đăng nhập
@@ -29,8 +29,8 @@
 							{{ csrf_field() }}
 							<input type="text" name="customer_name" placeholder="Họ và tên"/>
 							<input type="email" name="customer_email" placeholder="Địa chỉ email"/>
+							<input type="text" name="customer_phone" placeholder="Số điện thoại"/>
 							<input type="password" name="customer_password" placeholder="Mật khẩu"/>
-							<input type="text" name="customer_phone" placeholder="Phone"/>
 							<button type="submit" class="btn btn-default">Đăng ký</button>
 						</form>
 					</div><!--/sign up form-->

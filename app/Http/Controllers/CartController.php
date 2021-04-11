@@ -16,8 +16,8 @@ class CartController extends Controller
     public function gio_hang(Request $request){
          //seo 
         $meta_desc = "Giỏ hàng của bạn"; 
-        $meta_keywords = "Giỏ hàng Ajax";
-        $meta_title = "Giỏ hàng Ajax";
+        $meta_keywords = "Giỏ hàng của bạn";
+        $meta_title = "Giỏ hàng";
         $url_canonical = $request->url();
         //--seo
         $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get(); 

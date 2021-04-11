@@ -33,7 +33,6 @@
 							</td>
 							<td class="cart_description">
 								<h4><a href="">{{$v_content->name}}</a></h4>
-								<p>Web ID: 1089772</p>
 							</td>
 							<td class="cart_price">
 								<p>{{number_format($v_content->price).'đ'}}</p>
@@ -77,10 +76,10 @@
 					<div class="total_area">
 						<h3 style="text-align: center;">Hóa đơn</h2>
 						<ul>
-							<li>Tổng <span>{{Cart::total().'đ'}}</span></li>
+							<li>Tổng <span>{{Cart::subtotal().'đ'}}</span></li>
 							<li>Thuế <span>0đ</span></li>
 							<li>Phí vận chuyển <span>Free</span></li>
-							<li>Thành tiền <span style="color: red">{{Cart::total().'đ'}}</span></li>
+							<li>Thành tiền <span style="color: red">{{Cart::subtotal().'đ'}}</span></li>
 						</ul>
 						{{-- 	<a class="btn btn-default update" href="">Update</a> --}}
 							  <?php

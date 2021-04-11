@@ -4,7 +4,7 @@
   
   <div class="panel panel-default">
     <div class="panel-heading">
-     Thông tin đăng nhập
+     Thông tin khách hàng
     </div>
     
     <div class="table-responsive">
@@ -27,11 +27,10 @@
           </tr>
         </thead>
         <tbody>
-        
           <tr>
-            <td>{{$customer->customer_name}}</td>
-            <td>{{$customer->customer_phone}}</td>
-            <td>{{$customer->customer_email}}</td>
+            <td>{{$order_by_id->customer_name}}</td>
+            <td>{{$order_by_id->customer_phone}}</td>
+            <td>{{$order_by_id->customer_email}}</td>
           </tr>
      
         </tbody>
@@ -46,7 +45,7 @@
   
   <div class="panel panel-default">
     <div class="panel-heading">
-     Thông tin vận chuyển hàng
+     Thông tin giao nhận
     </div>
     
     
@@ -62,12 +61,13 @@
         <thead>
           <tr>
            
-            <th>Tên người vận chuyển</th>
-            <th>Địa chỉ</th>
+            <th>Tên người nhận</th>
+            <th>Địa chỉ Email</th>
             <th>Số điện thoại</th>
-            <th>Email</th>
-            <th>Ghi chú</th>
+            <th>Địa chỉ Faceook</th>
             <th>Hình thức thanh toán</th>
+            <th>Trạng thái thanh toán</th>
+            <th>Ghi chú</th>
           
             
             <th style="width:30px;"></th>
@@ -77,12 +77,13 @@
         
           <tr>
            
-            <td>{{$shipping->shipping_name}}</td>
-            <td>{{$shipping->shipping_address}}</td>
-             <td>{{$shipping->shipping_phone}}</td>
-             <td>{{$shipping->shipping_email}}</td>
-             <td>{{$shipping->shipping_notes}}</td>
-             <td>@if($shipping->shipping_method==0) Chuyển khoản @else Tiền mặt @endif</td>
+            <td>{{$order_by_id->shipping_name}}</td>
+            <td>{{$order_by_id->shipping_email}}</td>
+             <td>{{$order_by_id->shipping_phone}}</td>
+             <td>{{$order_by_id->shipping_fb}}</td>
+             <td>{{$order_by_id->payment_method}}</td>
+             <td>{{$order_by_id->payment_status}}</td>
+             <td>{{$order_by_id->shipping_notes}}</td>
             
           
           </tr>
@@ -94,15 +95,15 @@
    
   </div>
 </div>
-<br><br>
-
+<br>
 <div class="table-agile-info">
   
   <div class="panel panel-default">
     <div class="panel-heading">
-      Liệt kê chi tiết đơn hàng
+     Chi tiết đơn hàng
     </div>
-   
+    
+    
     <div class="table-responsive">
                       <?php
                             $message = Session::get('message');
@@ -114,77 +115,34 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
-              </label>
-            </th>
+           
             <th>Tên sản phẩm</th>
-            <th>Mã giảm giá</th>
-            <th>Phí ship hàng</th>
             <th>Số lượng</th>
-            <th>Giá sản phẩm</th>
-            <th>Tổng tiền</th>
+            <th>Giá</th>
+          
             
             <th style="width:30px;"></th>
           </tr>
         </thead>
         <tbody>
-          @php 
-          $i = 0;
-          $total = 0;
-          @endphp
-        @foreach($order_details as $key => $details)
-
-          @php 
-          $i++;
-          $subtotal = $details->product_price*$details->product_sales_quantity;
-          $total+=$subtotal;
-          @endphp
+          @foreach($product_order_by_id as $key => $details)
           <tr>
            
-            <td><i>{{$i}}</i></td>
             <td>{{$details->product_name}}</td>
-            <td>@if($details->product_coupon!='no')
-                  {{$details->product_coupon}}
-                @else 
-                  Không mã
-                @endif
-            </td>
-            <td>{{number_format($details->product_feeship ,0,',','.')}}đ</td>
             <td>{{$details->product_sales_quantity}}</td>
-            <td>{{number_format($details->product_price ,0,',','.')}}đ</td>
-            <td>{{number_format($subtotal ,0,',','.')}}đ</td>
+            <td>{{$details->product_price}}</td>
           </tr>
-        @endforeach
-          <tr>
-            <td colspan="2">  
-            @php 
-                $total_coupon = 0;
-              @endphp
-              @if($coupon_condition==1)
-                  @php
-                  $total_after_coupon = ($total*$coupon_number)/100;
-                  echo 'Tổng giảm :'.number_format($total_after_coupon,0,',','.').'</br>';
-                  $total_coupon = $total - $total_after_coupon - $details->product_feeship;
-                  @endphp
-              @else 
-                  @php
-                  echo 'Tổng giảm :'.number_format($coupon_number,0,',','.').'k'.'</br>';
-                  $total_coupon = $total - $coupon_number - $details->product_feeship;
-
-                  @endphp
-              @endif
-
-              Phí ship : {{number_format($details->product_feeship,0,',','.')}}đ</br> 
-             Thanh toán: {{number_format($total_coupon,0,',','.')}}đ 
-            </td>
-          </tr>
+          @endforeach
+            <th>Tổng:</th>
+            <th></th>
+            <th>{{$order_by_id->order_total}}</th>
         </tbody>
       </table>
-      <a target="_blank" href="{{url('/print-order/'.$details->order_code)}}">In đơn hàng</a>
+
     </div>
    
   </div>
 </div>
+
+
 @endsection
