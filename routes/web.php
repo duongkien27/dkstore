@@ -101,7 +101,7 @@ Route::get('/del-fee','CheckoutController@del_fee');
 
 Route::get('/logout-checkout','CheckoutController@logout_checkout');
 Route::post('/add-customer','CheckoutController@add_customer');
-Route::post('/order-place','CheckoutController@order_place');
+Route::post('/thankyou','CheckoutController@order_place');
 Route::post('/login-customer','CheckoutController@login_customer');
 Route::get('/checkout','CheckoutController@checkout');
 Route::get('/payment','CheckoutController@payment');

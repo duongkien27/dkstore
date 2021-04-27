@@ -59,6 +59,7 @@ class CheckoutController extends Controller
 
     	Session::put('customer_id',$customer_id);
     	Session::put('customer_name',$request->customer_name);
+        Session::put('customer_email',$request->customer_email);
     	return Redirect::to('/checkout');
 
 

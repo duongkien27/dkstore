@@ -19,11 +19,14 @@
 					<div class="col-md-3">
 						<div class="shopper-info">
 							<p>Thông tin khách hàng</p>
-							<form>
-								<input type="text" placeholder="Display Name">
-								<input type="text" placeholder="User Name">
-								<input type="password" placeholder="Password">
-							</form>
+							<div>
+								<?php
+                                   $customer_email = Session::get('customer_email');
+                                   $customer_name = Session::get('customer_name');
+                					echo $customer_name."<br>";
+                					echo 'Email: '.$customer_email;
+                                 ?>
+							</div>
 						</div>
 					</div>
 					
