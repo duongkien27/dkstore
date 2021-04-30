@@ -60,6 +60,7 @@ class CheckoutController extends Controller
     	Session::put('customer_id',$customer_id);
     	Session::put('customer_name',$request->customer_name);
         Session::put('customer_email',$request->customer_email);
+        Session::put('customer_phone',$request->customer_phone);
     	return Redirect::to('/checkout');
 
 
@@ -124,7 +125,7 @@ class CheckoutController extends Controller
         $order_data['order_total'] = Cart::subtotal();
         $order_data['order_status'] = 'Đang chờ xử lý';
         $order_id = DB::table('tbl_order')->insertGetId($order_data);
-
+        Session::put('order_id',$order_id);
         //insert order_details
         $content = Cart::content();
         foreach($content as $v_content){
@@ -173,7 +174,10 @@ class CheckoutController extends Controller
     	
     	if($result){
     		Session::put('customer_id',$result->customer_id);
-    		return Redirect::to('/checkout');
+            Session::put('customer_name',$result->customer_name);
+            Session::put('customer_email',$result->customer_email);
+            Session::put('customer_phone',$result->customer_phone);
+    		return Redirect::to('/trang-chu');
     	}else{
     		return Redirect::to('/login-checkout');
     	}

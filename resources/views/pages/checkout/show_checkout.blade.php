@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="{{URL::to('/trang-chu')}}">Trang chủ</a></li>
+				  <li><a href="{{URL::to('/trang-chu')}}">Home</a></li>
 				  <li class="active">Thông tin thanh toán</li>
 				</ol>
 			</div>
@@ -23,8 +23,10 @@
 								<?php
                                    $customer_email = Session::get('customer_email');
                                    $customer_name = Session::get('customer_name');
+                                   $customer_phone = Session::get('customer_phone');
                 					echo $customer_name."<br>";
-                					echo 'Email: '.$customer_email;
+                					echo 'Email: '.$customer_email."<br>";
+                					echo 'Số điện thoại: '.$customer_phone;
                                  ?>
 							</div>
 						</div>

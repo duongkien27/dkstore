@@ -14,23 +14,22 @@ session_start();
 
 class HomeController extends Controller
 {
-    // public function send_mail(){
-    //      //send mail
-    //             $to_name = "Hieu Tan Tutorial";
-    //             $to_email = "hieuchance2018@gmail.com";//send to this email
+    public function send_mail(){
+         //send mail
+                $to_name = "DK-Store";
+                $to_email = "duongkien.hust@gmail.com";//send to this email
                
              
-    //             $data = array("name"=>"Mail từ tài khoản Khách hàng","body"=>'Mail gửi về vấn về hàng hóa'); //body of mail.blade.php
+                $data = array("name"=>"Đơn hàng đang chờ xử lí","body"=>'Nội dung đơn hàng:'); //body of mail.blade.php
                 
-    //             Mail::send('pages.send_mail',$data,function($message) use ($to_name,$to_email){
+                Mail::send('pages.send_mail',$data,function($message) use ($to_name,$to_email){
 
-    //                 $message->to($to_email)->subject('Test thử gửi mail google');//send this mail with subject
-    //                 $message->from($to_email,$to_name);//send from this mail
-
-    //             });
-    //             // return redirect('/')->with('message','');
-    //             //--send mail
-    // }
+                    $message->to($to_email)->subject('THÔNG BÁO ĐƠN HÀNG MỚI');//send this mail with subject
+                    $message->from($to_email,$to_name);//send from this mail
+                });
+                return Redirect::to('/trang-chu')->with('message','');
+                //--send mail
+    }
 
     public function index(Request $request){
         //seo 
