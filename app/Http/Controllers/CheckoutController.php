@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use DB;
 use Session;
 use Cart;
+use Mail;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 session_start();
@@ -136,6 +137,19 @@ class CheckoutController extends Controller
             $order_d_data['product_sales_quantity'] = $v_content->qty;
             DB::table('tbl_order_details')->insert($order_d_data);
         }
+        //send mail
+                $to_name = "DK-Store";
+                $to_email = "duongkien.hust@gmail.com";//send to this email
+               
+             
+                $email = array("name"=>"Đơn hàng đang chờ xử lí","body"=>'Nội dung đơn hàng:'); //body of mail.blade.php
+                
+                Mail::send('pages.send_mail',$email,function($message) use ($to_name,$to_email){
+
+                    $message->to($to_email)->subject('THÔNG BÁO ĐƠN HÀNG MỚI');//send this mail with subject
+                    $message->from($to_email,$to_name);//send from this mail
+                });
+        //--send mail
         if($data['payment_method']=='Internet Banking'){
 
             Cart::destroy();

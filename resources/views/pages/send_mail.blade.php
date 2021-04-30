@@ -25,7 +25,8 @@
     <p>Mã đơn hàng: </p>
 	<?php
         $order_id = Session::get('order_id');
-        echo $order_id;
+        echo $order_id."<br>";
     ?>
+    <a href="{{URL::to('/view-order/'.$order_id)}}">Xem chi tiết</a>
 </body>
 </html>

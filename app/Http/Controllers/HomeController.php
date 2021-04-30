@@ -14,22 +14,6 @@ session_start();
 
 class HomeController extends Controller
 {
-    public function send_mail(){
-         //send mail
-                $to_name = "DK-Store";
-                $to_email = "duongkien.hust@gmail.com";//send to this email
-               
-             
-                $data = array("name"=>"Đơn hàng đang chờ xử lí","body"=>'Nội dung đơn hàng:'); //body of mail.blade.php
-                
-                Mail::send('pages.send_mail',$data,function($message) use ($to_name,$to_email){
-
-                    $message->to($to_email)->subject('THÔNG BÁO ĐƠN HÀNG MỚI');//send this mail with subject
-                    $message->from($to_email,$to_name);//send from this mail
-                });
-                return Redirect::to('/trang-chu')->with('message','');
-                //--send mail
-    }
 
     public function index(Request $request){
         //seo 

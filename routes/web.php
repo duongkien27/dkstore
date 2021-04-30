@@ -35,8 +35,6 @@ Route::get('/all-category-product','CategoryProduct@all_category_product');
 Route::get('/unactive-category-product/{category_product_id}','CategoryProduct@unactive_category_product');
 Route::get('/active-category-product/{category_product_id}','CategoryProduct@active_category_product');
 
-//Send Mail 
-Route::get('/send-mail','HomeController@send_mail');
 
 //Login facebook
 Route::get('/login-facebook','AdminController@login_facebook');
