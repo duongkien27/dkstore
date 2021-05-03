@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>Dashboard</title>
+<title>Trang quản lý</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -38,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--logo start-->
 <div class="brand">
     <a href="{{URL::to('/dashboard')}}" class="logo">
-        ADMIN
+        QUẢN LÝ
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
@@ -161,11 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         @yield('admin_content')
     </section>
  <!-- footer -->
-		  <div class="footer">
-			<div class="wthree-copyright">
-			  <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
-			</div>
-		  </div>
+
   <!-- / footer -->
 </section>
 <!--main content end-->
