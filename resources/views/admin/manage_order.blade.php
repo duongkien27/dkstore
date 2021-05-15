@@ -45,7 +45,7 @@
             <th>Tên khách hàng</th>
             <th>Tổng số tiền</th>
             <th>Trạng thái</th>
-            <th></th>
+            <th>Xử lí</th>
             <th></th>
             
             <th style="width:30px;"></th>

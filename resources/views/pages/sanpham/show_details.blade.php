@@ -23,7 +23,7 @@
                         <div class="brands-name">
                             <ul class="nav nav-pills nav-stacked">
                                 @foreach($brand as $key => $brand)
-                                <li><a href="{{URL::to('/thuong-hieu-san-pham/'.$brand->brand_id)}}"> <span class="pull-right">(50)</span>{{$brand->brand_name}}</a></li>
+                                <li><a href="{{URL::to('/thuong-hieu-san-pham/'.$brand->brand_id)}}"> <span class="pull-right"></span>{{$brand->brand_name}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -128,12 +128,17 @@
 														<div class="product-image-wrapper">
 															 <div class="single-products">
 																<div class="productinfo text-center">
+																	<form action="{{URL::to('/save-cart')}}" method="POST">
+                                        								@csrf
+                                        								<input type="hidden" name="qty" value="1"/>
+                                    									<input type="hidden" name="productid_hidden" value="{{$lienquan->product_id}}">
 																	<a href="{{URL::to('/chi-tiet-san-pham/'.$lienquan->product_id)}}">
 																	<img src="{{URL::to('public/uploads/product/'.$lienquan->product_image)}}" alt="" />
 																	<h2>{{number_format($lienquan->product_price).'đ'}}</h2>
 																	<p>{{$lienquan->product_name}}</p>
 																	</a>
-																	<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+																	<button type="submit" class="btn btn-fefault cart" id="btn" name="add-to-cart">Thêm giỏ hàng</button>
+																	</form>
 																</div>
 															  
 															</div>

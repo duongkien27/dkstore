@@ -12,6 +12,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
 use App\Rules\Captcha; 
+use PDF;
 class OrderController extends Controller
 {
 	public function AuthLogin(){
@@ -21,6 +22,17 @@ class OrderController extends Controller
         }else{
             return Redirect::to('admin')->send();
         }
+    }
+
+    public function print_order($checkout_code)
+    {
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($this->print_oder_convert($checkout_code));
+        return $pdf->stream();
+    }
+    public function print_oder_convert($checkout_code)
+    {
+        return $checkout_code;
     }
     public function manage_order()
     {

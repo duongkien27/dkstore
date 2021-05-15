@@ -140,9 +140,7 @@
       </table>
 
     </div>
-   
+   <a target="_blank" href="{{URL::to('/print-order/'.$order_by_id->order_details_id)}}">In hóa đơn</a>
   </div>
 </div>
-
-
 @endsection
