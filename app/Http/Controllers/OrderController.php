@@ -23,7 +23,6 @@ class OrderController extends Controller
             return Redirect::to('admin')->send();
         }
     }
-
     public function print_order($checkout_code)
     {
         $pdf = \App::make('dompdf.wrapper');

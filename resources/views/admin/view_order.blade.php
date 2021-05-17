@@ -47,8 +47,6 @@
     <div class="panel-heading">
      Thông tin giao nhận
     </div>
-    
-    
     <div class="table-responsive">
                       <?php
                             $message = Session::get('message');
